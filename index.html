@@ -3,87 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eaglercraft启动</title>
+    <title>Minecraft Web</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #2c3e50, #4a69bd);
+            /* MC主菜单深色半透明背景 */
+            background: #3f3f3f url("");
+            background-color: #474747;
+            background-image: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45));
             min-height: 100vh;
-            color: #fff;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
+            font-family: "Microsoft YaHei",sans-serif;
         }
-        .box {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 60px 40px;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-            max-width: 600px;
-            width: 100%;
+        .mc-title {
+            color: #ffffff;
+            font-size:48px;
+            text-shadow: 4px 4px 0 #222222;
+            letter-spacing:2px;
+            margin-bottom:48px;
+            font-weight:bold;
         }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
+        .mc-btn {
+            width:280px;
+            height:52px;
+            margin:12px 0;
+            font-size:18px;
+            /* MC原版按钮配色 */
+            background-color:#727272;
+            border:3px solid #000000;
+            border-top-color:#aaaaaa;
+            border-left-color:#aaaaaa;
+            border-right-color:#333333;
+            border-bottom-color:#333333;
+            color:#ffffff;
+            cursor:pointer;
+            transition: 0.08s;
         }
-        .btn-wrap {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .mc-btn:hover {
+            background-color:#88b8ff;
         }
-        button {
-            padding: 16px 32px;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.2s ease;
-        }
-        #openWasm {
-            background: #27ae60;
-            color: #fff;
-        }
-        #openWasm:hover {
-            background: #2ecc71;
-            transform: translateY(-3px);
-        }
-        #openJs {
-            background: #e67e22;
-            color: #fff;
-        }
-        #openJs:hover {
-            background: #f39c12;
-            transform: translateY(-3px);
-        }
-        .tip {
-            font-size: 14px;
-            opacity: 0.7;
-            margin-top: 40px;
+        .mc-btn:active {
+            border-top-color:#333333;
+            border-left-color:#333333;
+            border-right-color:#aaaaaa;
+            border-bottom-color:#aaaaaa;
         }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>🏠 工具选择</h1>
-        <div class="btn-wrap">
-            <!-- target="_blank" 新标签页打开 -->
-            <button id="openWasm" onclick="window.open('wasm.html','_blank')">Wasm 版</button>
-            <button id="openJs" onclick="window.open('js.html','_blank')">J版S</button>
-        </div>
-        <div class="tip">
-            Powered by 自建局域网服务 | 2026
-        </div>
-    </div>
+    <div class="mc-title">MINECRAFT WEB</div>
+
+    <!-- 当前页面跳转，location.href 不新开标签 -->
+    <button class="mc-btn" onclick="location.href='js.html'">JS版本</button>
+    <button class="mc-btn" onclick="location.href='wasm.html'">WASM版本</button>
+
 </body>
 </html>
